@@ -1,0 +1,17 @@
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+	color: #e5e5e5;
+	font-style: normal;
+	overflow-y: hidden;
+}
+.container{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.container::-webkit-scrollbar {
+  display: none; }

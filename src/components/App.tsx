@@ -1,13 +1,15 @@
 import React from 'react';
+import Home from './Home/Home';
 
 import '../styles/index.css';
 
 class App extends React.PureComponent {
     render() {
         return (
-            <div>
-                <h1>Hello World!</h1>
+            <div className="body">
+            <Home/>
             </div>
+
         );
     }
 }

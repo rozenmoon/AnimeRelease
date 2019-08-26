@@ -1,3 +1,24 @@
 body {
 	background: #000000;
+	font-size: 1vw;
+	background: #141414;
+	color: #fff;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size: 10px;
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+	margin: 0;
+	display: block;
+	width: 100%;
+	min-height: 100%;
 }
+/* @media screen and (min-width: 1000px)
+body, html {
+    font-size: 1vw;
+} */

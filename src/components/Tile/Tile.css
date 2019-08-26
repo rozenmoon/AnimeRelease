@@ -1,25 +1,16 @@
-
 .tile {
 	position: relative;
 	background: black;
-	width: 15%;
-	/* height: 100px; */
+	width: 216px;
+	height: 121px;
 	margin: 0 2px 0 0;
+
 	flex: 0 0 auto;
+	transition: all 0.2s ease;
+	vertical-align: middle;
+	padding: auto 0;
 }
-.tile:hover {
-	-webkit-transform: scale(2);
-	-ms-transform: scale(2);
-	/* width: 200px; */
-	/* height: 150px; */
-	z-index: 100;
-	margin: 0 150px;
-	transition: margin 0.2s;
-}
-/* .tile::before{
-	content: "";
-	padding-top: 160%;
-} */
+
 .image {
 	width: 100%;
 	height: 100%;

@@ -7,11 +7,26 @@
 	overflow-y: hidden;
 }
 .container{
-  display: flex;
+	display: flex;
+	padding: 0 60px;
+
+
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	height: 300px;
+	align-items: center;
+	/* transform: translate(75px);
+	transition: transform 0.2s ease; */
 }
 .container::-webkit-scrollbar {
-  display: none; }
+	display: none; }
+
+/* .container:hover{
+	transform: translate(-75px);
+	transition: all 0.2s ease;
+} */
+/* .container:first-child div {
+	padding: 0 75px 0 0;
+} */

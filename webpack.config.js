@@ -31,10 +31,20 @@ module.exports = {
       // css-loader to bundle all the css files into one file and style-loader to add all the styles  inside the style tag of the document
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        loader: 'style-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'css-loader',
+        query: {
+          modules: {
+          localIdentName: '[name]__[local]___[hash:base64:5]'},
+        }
       }
     ]
   },
+  // mode: "development",
+  devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'

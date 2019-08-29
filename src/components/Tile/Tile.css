@@ -20,5 +20,8 @@
 .info {
 	position: absolute;
 	color: white;
-	bottom: 0px;
+	width: 100%;
+	bottom: 10px;
+	padding: 2px;
+	font-weight: bold;
 }

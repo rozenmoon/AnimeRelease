@@ -3,15 +3,15 @@ import { Dispatch } from "redux";
 import * as styles from "./Tile.css";
 import { connect } from "react-redux";
 import { onMouseEnterTile, onMouseLeaveTile } from "../../store/actionCreator";
-
 interface State {
   transform: string;
 }
 interface Props {
-  img: string;
+  index: number;
+  image_url: string;
   title: string;
-  category: string;
   rank: number;
+  start_date: string;
   style: React.CSSProperties;
   onMouseEnterTileProps: (id: number) => void;
   onMouseLeaveTileProps: () => void;
@@ -35,7 +35,6 @@ class Tile extends React.Component<Props, State> {
   }
 
   onMouseEnterTile = (id: number) => {
-    console.log(id);
     this.scalesToDouble();
     this.props.onMouseEnterTileProps(id);
   };
@@ -46,22 +45,23 @@ class Tile extends React.Component<Props, State> {
   };
 
   public render() {
-    const { img, title, category, rank, style } = this.props;
+    const { index, image_url, title, rank, style, start_date } = this.props;
     return (
       <div
         className={styles.tile}
         style={{ transform: this.state.transform, ...style }}
         onMouseEnter={() => {
-          this.onMouseEnterTile(rank);
+          this.onMouseEnterTile(index);
         }}
         onMouseLeave={() => this.onMouseLeaveTile()}
       >
-        <img className={styles.image} src={img} />
-        <div className={styles.info}>
-          <div>{title}</div>
-          <div>{category}</div>
-          <div>{rank}</div>
-        </div>
+        <img className={styles.image} src={image_url} />
+        {this.state.transform === "scale(2)" ? (
+          <div className={styles.info}>
+            <div>{title}</div>
+            <div>{start_date}</div>
+          </div>
+        ) : null}
       </div>
     );
   }

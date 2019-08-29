@@ -6,3 +6,7 @@ export const onMouseEnterTile = (id: number) => ({
 export const onMouseLeaveTile = () => ({
 	type: 'MOUSELEAVE',
 })
+
+export const loadInitData = () => ({
+	type: 'LOAD_INIT_DATA',
+})

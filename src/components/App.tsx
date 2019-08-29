@@ -1,13 +1,20 @@
-import React from 'react';
-import {createStore}from 'redux';
-import {Provider} from 'react-redux';
-import rootReducer from '../store/reducer';
+import React, { Dispatch } from 'react';
 import Home from './Home/Home';
 import '../styles/index.css';
+import { connect } from 'react-redux';
+import { loadInitData } from '../store/actionCreator';
 
-const store = createStore(rootReducer);
 
-class App extends React.PureComponent {
+interface Props {
+    loadInitData: any;
+}
+class App extends React.PureComponent<Props> {
+    constructor(props: Props) {
+        super(props);
+    }
+    componentDidMount() {
+        this.props.loadInitData();
+    }
     render() {
         return (
             <div className="body">
@@ -18,4 +25,9 @@ class App extends React.PureComponent {
     }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
+    loadInitData: () => dispatch(loadInitData()),
+});
+
+
+export default connect(null, mapDispatchToProps)(App);

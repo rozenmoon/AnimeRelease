@@ -31,4 +31,19 @@ const InitialData = (state = {}, action: {type:string, data: any}) => {
 	}
 }
 
-export default combineReducers({hoveredElement,InitialData});
+const SelectedAnime = (state = {}, action: {type: string, selectedAnime?: any, selectedAnimeData?: any}) => {
+	switch(action.type){
+		case 'SELECT_ANIME_START':
+			return{
+				...state, selectedAnime: action.selectedAnime
+			};
+		case 'SELECT_ANIME_SUCCESS':
+				return{
+				...state, selecedAnimeData: action.selectedAnimeData
+			};
+		default:
+			return state
+	}
+}
+
+export default combineReducers({hoveredElement,InitialData,SelectedAnime});

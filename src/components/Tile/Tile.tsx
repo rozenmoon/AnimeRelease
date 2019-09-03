@@ -2,7 +2,7 @@ import React from "react";
 import { Dispatch } from "redux";
 import * as styles from "./Tile.css";
 import { connect } from "react-redux";
-import { onMouseEnterTile, onMouseLeaveTile } from "../../store/actionCreator";
+import { onMouseEnterTile, onMouseLeaveTile, onAnimeTileClick} from "../../store/actionCreator";
 interface State {
   transform: string;
 }
@@ -12,9 +12,11 @@ interface Props {
   title: string;
   rank: number;
   start_date: string;
+  mal_id:number;
   style: React.CSSProperties;
   onMouseEnterTileProps: (id: number) => void;
   onMouseLeaveTileProps: () => void;
+  onAnimeTileClick: (id: number) => void;
 }
 
 class Tile extends React.Component<Props, State> {
@@ -45,15 +47,20 @@ class Tile extends React.Component<Props, State> {
   };
 
   public render() {
-    const { index, image_url, title, rank, style, start_date } = this.props;
+    const { index, image_url, title, rank, style, start_date, mal_id } = this.props;
+
+    const Customstyles =
+      index === 0 ? { transformOrigin: "left", ...style } : { ...style };
+
     return (
       <div
         className={styles.tile}
-        style={{ transform: this.state.transform, ...style }}
+        style={{ transform: this.state.transform, ...Customstyles }}
         onMouseEnter={() => {
           this.onMouseEnterTile(index);
         }}
         onMouseLeave={() => this.onMouseLeaveTile()}
+        onMouseDown={() => this.props.onAnimeTileClick(mal_id)}
       >
         <img className={styles.image} src={image_url} />
         {this.state.transform === "scale(2)" ? (
@@ -73,6 +80,9 @@ const mapDispatchToProps = (dispatch: Dispatch<void>) => ({
   },
   onMouseLeaveTileProps: () => {
     dispatch(onMouseLeaveTile());
+  },
+  onAnimeTileClick: (id: number) => {
+    dispatch(onAnimeTileClick(id));
   }
 });
 

@@ -11,6 +11,10 @@
 	padding: auto 0;
 }
 
+.title:first-child {
+	transform-origin: left;
+}
+
 .image {
 	object-fit: cover;
 	/* width: 100%;

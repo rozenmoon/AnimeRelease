@@ -3,6 +3,7 @@ import Home from './Home/Home';
 import '../styles/index.css';
 import { connect } from 'react-redux';
 import { loadInitData } from '../store/actionCreator';
+import { BrowserRouter } from 'react-router-dom';
 
 
 interface Props {

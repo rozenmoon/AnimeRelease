@@ -10,3 +10,8 @@ export const onMouseLeaveTile = () => ({
 export const loadInitData = () => ({
 	type: 'LOAD_INIT_DATA',
 })
+
+export const onAnimeTileClick = (id: number) => ({
+	type: 'SELECT_ANIME_START',
+	selectedAnime: id
+})

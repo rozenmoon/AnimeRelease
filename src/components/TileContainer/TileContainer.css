@@ -5,12 +5,13 @@
 	color: #e5e5e5;
 	font-style: normal;
 	overflow-y: hidden;
+	position: absolute;
+	top: 28px;
+	/* padding: 0px; */
 }
 .container{
 	display: flex;
 	padding: 0 60px;
-
-
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;

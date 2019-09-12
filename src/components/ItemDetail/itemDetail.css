@@ -1,0 +1,90 @@
+.banner {
+}
+
+.container {
+  height: 400px;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.animePosterHolder {
+  position: absolute;
+  width: 80%;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+.animePoster {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.animeHeader {
+  width: 40%;
+  bottom: 0;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  padding: 100px 0 0 50px;
+  box-sizing: border-box;
+  background: linear-gradient(to right, black 0%, black 70%, rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+.title {
+  padding: 10px 0;
+  font-size: 30px;
+}
+
+.releaseDate {
+}
+
+.description {
+  padding: 5px 0;
+  font-size: 17px;
+}
+
+.genres {
+  display: flex;
+}
+
+.genre {
+  background: cornflowerblue;
+  margin: 6px;
+  padding: 0 3px;
+}
+
+.menu {
+  position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0));
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.category {
+  margin: 0 15px;
+  border-bottom: 5px solid cornflowerblue;
+}
